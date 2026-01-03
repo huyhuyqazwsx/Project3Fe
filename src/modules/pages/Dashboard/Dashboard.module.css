@@ -1,0 +1,84 @@
+.wrapper {
+    min-height: 100vh;
+    background: #f8fafc;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.header {
+    height: 64px;
+    background: #2563eb;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.userBox {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+}
+
+.logout {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #1e40af;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.logout:hover {
+    background: #1d4ed8;
+}
+
+/* Main */
+.main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 520px;
+    background: white;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.15);
+}
+
+.card h2 {
+    color: #1e3a8a;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #334155;
+    margin-bottom: 16px;
+}
+
+.hint {
+    background: #eff6ff;
+    padding: 16px;
+    border-radius: 12px;
+    color: #1e3a8a;
+    font-size: 14px;
+}
+
+.hint ul {
+    margin: 8px 0 0 18px;
+}
