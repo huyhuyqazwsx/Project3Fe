@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { useAuth } from '../../hooks/auth/useAuth.ts';
-import type { RegisterRequest } from '../../types/auth';
+import { useAuth } from '../../../hooks/auth/useAuth.ts';
+import type { RegisterRequest } from '../../../types/auth.ts';
 import * as React from "react";
 
 export default function RegisterUserPage() {

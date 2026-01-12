@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { useAuth } from '../../hooks/auth/useAuth';
+import { useAuth } from '../../../hooks/auth/useAuth.ts';
 import { useNavigate } from 'react-router-dom';
 
-import RegisterUserPage from './RegisterUserPage';
-import SubjectPage from '../Admin/SubjectPage.tsx';
+import RegisterUserPage from '../Auth/RegisterUserPage.tsx';
+import SubjectPage from '../Subject/SubjectPage.tsx';
 import ExamPage from "../Exam/ExamPage.tsx";
 import ClassPage from "../Class/ClassPage.tsx";
 

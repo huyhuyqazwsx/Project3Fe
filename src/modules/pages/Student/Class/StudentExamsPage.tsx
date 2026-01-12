@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { useAuth } from '../../hooks/auth/useAuth';
-import { examApi } from '../../api/exam/examApi';
-import type { GetListExamForStudentDto } from '../../types/exam';
+import { useAuth } from '../../../hooks/auth/useAuth.ts';
+import { examApi } from '../../../api/exam/examApi.ts';
+import type { GetListExamForStudentDto } from '../../../types/exam.ts';
 import { useNavigate } from 'react-router-dom';
 
 export default function StudentExamsPage() {

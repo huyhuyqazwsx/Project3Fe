@@ -1,4 +1,4 @@
-import { useAuth } from '../../hooks/auth/useAuth';
+import { useAuth } from '../../../hooks/auth/useAuth.ts';
 import { useNavigate } from 'react-router-dom';
 import styles from './Dashboard.module.css';
 import { FiLogOut, FiUser, FiBook, FiEdit3, FiBarChart2 } from 'react-icons/fi';

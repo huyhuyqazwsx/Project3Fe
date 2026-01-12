@@ -3,8 +3,15 @@ import type {
     ApiUpdateExamResponse,
     CreateExamRequest,
     CreateExamResponse,
-    Exam, ExamForStudent, ExamResultPreviewDto, ExamResultSummaryDto, GetListExamForStudentDto,
-    UpdateExamRequest
+    Exam,
+    ExamForStudent,
+    ExamResultPreviewDto,
+    ExamResultSummaryDto,
+    GetListExamForStudentDto,
+    StartExamResponse,
+    UpdateExamRequest,
+    ExamStudentsStatusResponse,
+    ExamGenerateResultDto
 } from "../../types/exam.ts";
 
 export const examApi = {
@@ -81,7 +88,40 @@ export const examApi = {
     ): Promise<GetListExamForStudentDto[]> => {
         const res = await axiosInstance.get(
             `/Exam/class/${classId}`,
-            { params: { studentId } } // BE đang dùng
+            { params: { studentId } }
+        );
+        return res.data;
+    },
+
+    startExam: async (
+        examId: number,
+        studentId: number
+    ): Promise<StartExamResponse> => {
+        const res = await axiosInstance.post<StartExamResponse>(
+            '/Exam/start-exam',
+            { examId, studentId }
+        );
+        return res.data;
+    },
+
+    // 🆕 Lấy tổng quan điểm các sinh viên trong 1 bài kiểm tra
+    getPreviewScoreStudents: async (
+        examId: number
+    ): Promise<ExamStudentsStatusResponse> => {
+        const res = await axiosInstance.get<ExamStudentsStatusResponse>(
+            `/Exam/preview-score-students/${examId}`
+        );
+        return res.data;
+    },
+
+    // 🆕 Lấy câu hỏi hiện tại của sinh viên (dùng khi reload trang)
+    getCurrentQuestion: async (
+        examId: number,
+        studentId: number
+    ): Promise<ExamGenerateResultDto> => {
+        const res = await axiosInstance.get<ExamGenerateResultDto>(
+            `/Exam/exams/${examId}/current-question`,
+            { params: { studentId } }
         );
         return res.data;
     },

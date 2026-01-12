@@ -1,7 +1,7 @@
-import { useSubjects } from '../../hooks/subject/useSubjects.ts';
-import { SubjectCreateForm } from '../../components/subject/SubjectCreateForm.tsx';
-import { SubjectSearchForm } from '../../components/subject/SubjectSearchForm.tsx';
-import { SubjectList } from '../../components/subject/SubjectList.tsx';
+import { useSubjects } from '../../../hooks/subject/useSubjects.ts';
+import { SubjectCreateForm } from '../../../components/subject/SubjectCreateForm.tsx';
+import { SubjectSearchForm } from '../../../components/subject/SubjectSearchForm.tsx';
+import { SubjectList } from '../../../components/subject/SubjectList.tsx';
 
 export default function SubjectPage() {
     const {

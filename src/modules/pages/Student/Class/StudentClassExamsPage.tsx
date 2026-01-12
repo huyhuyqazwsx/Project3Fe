@@ -2,8 +2,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import {
     getExamUIStatus,
     getExamStatusLabel,
-} from '../../../shared/utils/examStatus';
-import {useStudentClassExams} from "../../hooks/class/useStudentClassExams.ts";
+} from '../../../../shared/utils/examStatus.ts';
+import {useStudentClassExams} from "../../../hooks/class/useStudentClassExams.ts";
 
 export default function StudentClassExamsPage() {
     const { classId } = useParams<{ classId: string }>();
@@ -82,9 +82,7 @@ export default function StudentClassExamsPage() {
                                         uiStatus === 'IN_PROGRESS') && (
                                         <button
                                             onClick={() =>
-                                                navigate(
-                                                    `/student/exams?examId=${exam.examId}`
-                                                )
+                                                navigate(`/student/exams/${exam.examId}/take`)
                                             }
                                         >
                                             ▶️{' '}

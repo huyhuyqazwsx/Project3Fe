@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../hooks/auth/useAuth';
-import { useClasses } from '../../hooks/class/useClasses';
-import type { ClassForStudentDto } from '../../types/class';
+import { useAuth } from '../../../hooks/auth/useAuth.ts';
+import { useClasses } from '../../../hooks/class/useClasses.ts';
+import type { ClassForStudentDto } from '../../../types/class.ts';
 
 export default function StudentClassesPage() {
     const { user } = useAuth();

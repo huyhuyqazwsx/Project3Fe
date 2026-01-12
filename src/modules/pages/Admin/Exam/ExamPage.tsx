@@ -1,6 +1,6 @@
-import {useExams} from "../../hooks/exam/useExams.ts";
-import {ExamList} from "../../components/exam/ExamList.tsx";
-import {ExamCreateForm} from "../../components/exam/ExamCreateForm.tsx";
+import {useExams} from "../../../hooks/exam/useExams.ts";
+import {ExamList} from "../../../components/exam/ExamList.tsx";
+import {ExamCreateForm} from "../../../components/exam/ExamCreateForm.tsx";
 
 export default function ExamPage() {
     const {

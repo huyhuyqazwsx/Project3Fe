@@ -1,13 +1,14 @@
 import { Routes, Route } from 'react-router-dom';
-import Login from "../modules/pages/Login/Login.tsx";
+import Login from "../modules/pages/Share/Login/Login.tsx";
 import ProtectedRoute from "./ProtectedRoute.tsx";
 import RoleRedirect from "./RoleRedirect.tsx";
-import AdminPage from "../modules/pages/Admin/AdminPage.tsx";
-import Dashboard from "../modules/pages/Student/Dashboard.tsx";
-import StudentExamsPage from "../modules/components/class/StudentExamsPage.tsx";
-import StudentResultsPage from "../modules/components/class/StudentResultsPage.tsx";
-import StudentClassesPage from "../modules/components/class/StudentClassesPage.tsx";
-import StudentClassExamsPage from "../modules/pages/Class/StudentClassExamsPage.tsx";
+import AdminPage from "../modules/pages/Admin/Dashboard/AdminPage.tsx";
+import Dashboard from "../modules/pages/Student/Dashboard/Dashboard.tsx";
+import StudentExamsPage from "../modules/pages/Student/Class/StudentExamsPage.tsx";
+import StudentResultsPage from "../modules/pages/Student/exam/StudentResultsPage.tsx";
+import StudentClassesPage from "../modules/pages/Student/Class/StudentClassesPage.tsx";
+import StudentClassExamsPage from "../modules/pages/Student/Class/StudentClassExamsPage.tsx";
+import StudentExamPage from "../modules/pages/Student/exam/StudentExamPage.tsx";
 
 export default function AppRoutes() {
     return (
@@ -45,6 +46,36 @@ export default function AppRoutes() {
                 }
             />
 
+            {/* ✅ Danh sách đề thi của 1 lớp */}
+            <Route
+                path="/student/classes/:classId/exams"
+                element={
+                    <ProtectedRoute>
+                        <StudentClassExamsPage />
+                    </ProtectedRoute>
+                }
+            />
+
+            {/* ✅ Trang làm bài thi */}
+            <Route
+                path="/student/exams/:examId"
+                element={
+                    <ProtectedRoute>
+                        <StudentExamPage />
+                    </ProtectedRoute>
+                }
+            />
+
+            <Route
+                path="/student/exams/:examId/take"
+                element={
+                    <ProtectedRoute>
+                        <StudentExamPage />
+                    </ProtectedRoute>
+                }
+            />
+
+            {/* (giữ lại nếu bạn còn dùng) */}
             <Route
                 path="/student/exams"
                 element={
@@ -54,6 +85,17 @@ export default function AppRoutes() {
                 }
             />
 
+            {/* ✅ Trang xem kết quả */}
+            <Route
+                path="/student/results/:examId"
+                element={
+                    <ProtectedRoute>
+                        <StudentResultsPage />
+                    </ProtectedRoute>
+                }
+            />
+
+            {/* (giữ lại nếu còn dùng query string) */}
             <Route
                 path="/student/results"
                 element={
@@ -62,6 +104,7 @@ export default function AppRoutes() {
                     </ProtectedRoute>
                 }
             />
+
 
             {/* ================= ADMIN ================= */}
             <Route

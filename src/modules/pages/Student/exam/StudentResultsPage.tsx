@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import { useAuth } from '../../hooks/auth/useAuth';
-import { examApi } from '../../api/exam/examApi';
+import { useAuth } from '../../../hooks/auth/useAuth.ts';
+import { examApi } from '../../../api/exam/examApi.ts';
 import type {
     GetListExamForStudentDto,
     ExamResultSummaryDto,
     ExamResultPreviewDto,
-} from '../../types/exam';
+} from '../../../types/exam.ts';
 
 export default function StudentResultsPage() {
     const { user } = useAuth();

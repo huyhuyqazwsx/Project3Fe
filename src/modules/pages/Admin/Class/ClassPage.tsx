@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { useClasses } from '../../hooks/class/useClasses';
-import { ClassList } from '../../components/class/ClassList';
-import { ClassDetailPage } from './ClassDetailPage';
+import { useClasses } from '../../../hooks/class/useClasses.ts';
+import { ClassList } from '../../../components/class/ClassList.tsx';
+import { ClassDetailPage } from './ClassDetailPage.tsx';
 
 export default function ClassPage() {
     const { classes, loading } = useClasses();

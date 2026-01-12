@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { useClasses } from '../../hooks/class/useClasses';
-import type { StudentInClass } from '../../types/class';
+import { useClasses } from '../../../hooks/class/useClasses.ts';
+import type { StudentInClass } from '../../../types/class.ts';
 
 interface Props {
     classId: number;
