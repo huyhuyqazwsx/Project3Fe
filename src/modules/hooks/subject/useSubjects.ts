@@ -3,7 +3,6 @@ import type {CreateSubjectRequest, Subject, SubjectSearchParams, UpdateSubjectRe
 import {subjectApi} from "../../api/subject/subjectApi.ts";
 import {getAxiosErrorMessage} from "../../../shared/utils/getAxiosErrorMessage.ts";
 
-
 export function useSubjects() {
     const [subjects, setSubjects] = useState<Subject[]>([]);
     const [loading, setLoading] = useState(true);

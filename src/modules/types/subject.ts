@@ -37,3 +37,15 @@ export interface SubjectSearchParams {
     sortBy?: 'name' | 'code' | 'chapters';
     desc?: boolean;
 }
+
+export interface UpdateClassRequest {
+    id: number;
+    name: string;
+    subjectId: number;
+    teacherId: number;
+}
+
+export interface UpdateClassResponse {
+    message: string;
+    classId: number;
+}

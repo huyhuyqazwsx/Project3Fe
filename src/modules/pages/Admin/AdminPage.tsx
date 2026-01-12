@@ -4,11 +4,15 @@ import { useNavigate } from 'react-router-dom';
 
 import RegisterUserPage from './RegisterUserPage';
 import SubjectPage from '../Admin/SubjectPage.tsx';
+import ExamPage from "../Exam/ExamPage.tsx";
+import ClassPage from "../Class/ClassPage.tsx";
 
 type AdminAction =
     | 'REGISTER_USER'
     | 'ADD_SUBJECT'
-    | 'ADD_QUESTION';
+    | 'ADD_QUESTION'
+    | 'ADD_EXAM'
+    | 'ADD_CLASS';
 
 export default function AdminPage() {
     const { user, logout } = useAuth();
@@ -56,12 +60,22 @@ export default function AdminPage() {
                 <button onClick={() => setAction('ADD_QUESTION')}>
                     ❓ Thêm câu hỏi
                 </button>
+
+                <button onClick={() => setAction('ADD_EXAM')}>
+                    📝 Thêm bài thi
+                </button>
+
+                <button onClick={() => setAction('ADD_CLASS')}>
+                    🏫 Quản lý lớp
+                </button>
             </div>
 
             {/* Content */}
             <main>
                 {action === 'REGISTER_USER' && <RegisterUserPage />}
                 {action === 'ADD_SUBJECT' && <SubjectPage />}
+                {action === 'ADD_EXAM' && <ExamPage />}
+                {action === 'ADD_CLASS' && <ClassPage />}
             </main>
         </div>
     );
